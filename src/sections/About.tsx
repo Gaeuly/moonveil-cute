@@ -17,16 +17,17 @@ const About = () => {
       <style>{gradientStyle}</style>
       <section 
         id="about" 
-        className="py-20 px-4 sm:px-6 animated-gradient-about"
+        className="py-20 animated-gradient-about overflow-hidden"
       >
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap items-center">
             
-            <div className="w-full md:w-1/2 text-left">
+            {/* Kolom Teks */}
+            <div className="w-full md:w-1/2 lg:w-3/5 text-left">
               <img 
                 src="/about/about.webp" 
                 alt="About Moonveil Logo" 
-                className="w-full max-w-xs mb-6"
+                className="w-full max-w-[280px] sm:max-w-xs mb-6"
               />
               <h2 
                 className="text-4xl sm:text-5xl font-bold mb-4"
@@ -64,11 +65,12 @@ const About = () => {
               </p>
             </div>
 
-            <div className="w-full md:w-1/2 hidden md:flex justify-center items-center">
+            {/* Kolom Gambar */}
+            <div className="w-full md:w-1/2 lg:w-2/5 hidden md:flex justify-center items-center">
               <img 
                 src="/about/moonchan.webp" 
                 alt="Moonveil Character" 
-                className="w-full max-w-md md:max-w-lg"
+                className="w-full max-w-md md:max-w-lg lg:translate-x-12"
               />
             </div>
 
