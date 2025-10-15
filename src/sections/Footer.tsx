@@ -1,10 +1,8 @@
-import React from 'react';
-
 const Footer = () => {
   return (
     <footer 
       id="footer-section" 
-      className="bg-[#1A1A2E] text-white relative"
+      className="relative bg-[#1A1A2E]"
     >
       <style>
         {`
@@ -12,6 +10,17 @@ const Footer = () => {
             padding: 50px;
             background: url(/footer.webp) 150% 53% no-repeat;
             background-size: 72vw auto;
+            color: #FFF; /* Default text color */
+          }
+
+          .footer-content-wrapper {
+            width: 100%;
+          }
+          
+          @media screen and (min-width: 768px) {
+             .footer-content-wrapper {
+               width: 50%;
+             }
           }
 
           @media screen and (max-width: 768px) {
@@ -26,40 +35,51 @@ const Footer = () => {
               background-position: 110% 53%;
               background-size: 40vw auto;
             }
+             .footer-content-wrapper {
+               width: 80%;
+             }
           }
 
           @media screen and (max-width: 500px) {
             #footer-section {
-              background-image: url(/footer.webp);
-              background-position: 114% bottom;
-              background-size: 46vw auto;
-              background-repeat: no-repeat;
+              /* Penting: Hapus background-image di sini agar tidak dobel */
+              background-image: none;
+              padding-bottom: 120px; /* Beri ruang untuk gambar di bawah */
             }
+            .footer-image-mobile {
+              display: block;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 46vw;
+              height: auto;
+            }
+            .footer-content-wrapper {
+               width: 100%;
+             }
           }
         `}
       </style>
 
-      <div className="w-full md:w-3/5 lg:w-1/2">
+      <div className="footer-content-wrapper">
         <img src="/logo.webp" alt="Moonveil Logo" className="w-56 mb-8" />
-        <p 
-          className="text-base text-gray-300 mb-6"
-          style={{ fontFamily: "'Ubuntu', sans-serif" }}
-        >
+        <p className="text-base text-gray-300 mb-6 font-ubuntu">
           Moonveil is a universe dedicated to creators, adventurers, and dreamers. Our mission is to provide a unique, relevant, and descriptive alternative to existing digital extensions.
         </p>
-        <p
-          className="text-base text-gray-400 mb-8 md:pr-[34%]"
-          style={{ fontFamily: "'Ubuntu', sans-serif" }}
-        >
+        <p className="text-base text-gray-400 mb-8 font-ubuntu">
           Our platform operates under the highest standards, ensuring a safe and vibrant space for our global community to connect and create.
         </p>
-        <p 
-          className="text-sm text-gray-500"
-          style={{ fontFamily: "'Ubuntu', sans-serif" }}
-        >
+        <p className="text-sm text-gray-500 font-ubuntu">
           © 2025 Moonveil. All Rights Reserved.
         </p>
       </div>
+
+      {/* Gambar ini hanya akan muncul di mobile */}
+      <img 
+        src="/footer.webp"
+        alt="Footer Character"
+        className="footer-image-mobile hidden"
+      />
     </footer>
   );
 };
