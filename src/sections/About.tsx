@@ -1,5 +1,4 @@
 const About = () => {
-  // CSS untuk animasi gradasi, di-hardcode di sini agar tidak mempengaruhi section lain.
   const gradientStyle = `
     @keyframes gradient-animation-about {
       0% { background-position: 0% 50%; }
@@ -21,10 +20,14 @@ const About = () => {
         className="py-20 px-4 sm:px-6 animated-gradient-about"
       >
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
             
-            {/* Kolom Teks (Kiri di Desktop) */}
-            <div className="w-full md:w-3/5 text-left">
+            <div className="w-full md:w-1/2 text-left">
+              <img 
+                src="/about/about.webp" 
+                alt="About Moonveil Logo" 
+                className="w-full max-w-xs mb-6"
+              />
               <h2 
                 className="text-4xl sm:text-5xl font-bold mb-4"
                 style={{ fontFamily: "'KGCorneroftheSky', sans-serif", color: '#FFFFFF' }}
@@ -43,7 +46,7 @@ const About = () => {
                 className="text-base sm:text-lg mb-6"
                 style={{ fontFamily: "'Ubuntu', sans-serif", color: '#E0E7FF' }}
               >
-                The name "Moonveil" evokes a sense of mystery, magic, and boundless potential. It's a realm born from the fabric of imagination, rooted in the culture of storytelling, gaming, and digital art. It's the perfect home for anime clubs, developers, cosplayers, artists, and anyone with a passion to create and share.
+                The name "Moonveil" evokes a sense of mystery, magic, and boundless potential. It's the perfect home for anime clubs, developers, cosplayers, artists, and anyone with a passion to create and share.
               </p>
 
               <h3
@@ -57,16 +60,15 @@ const About = () => {
                 className="text-base sm:text-lg"
                 style={{ fontFamily: "'Ubuntu', sans-serif", color: '#E0E7FF' }}
               >
-                Our vision is to provide a space where creativity thrives. You don't have to be a "certified" geek to register your own Moonveil identity. Anyone can use Moonveil to express themselves online, build communities, and launch their next big idea.
+                Our vision is to provide a space where creativity thrives. Anyone can use Moonveil to express themselves online, build communities, and launch their next big idea.
               </p>
             </div>
 
-            {/* Kolom Gambar (Kanan di Desktop) */}
-            <div className="w-full md:w-2/5 flex justify-center items-center mt-8 md:mt-0">
+            <div className="w-full md:w-1/2 hidden md:flex justify-center items-center">
               <img 
-                src="/about/about.webp" 
-                alt="About Moonveil Character" 
-                className="w-full max-w-sm md:max-w-full rounded-lg"
+                src="/about/moonchan.webp" 
+                alt="Moonveil Character" 
+                className="w-full max-w-md md:max-w-lg"
               />
             </div>
 
