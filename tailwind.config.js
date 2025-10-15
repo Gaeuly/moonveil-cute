@@ -8,7 +8,7 @@ export default {
         'ubuntu': ['Ubuntu', 'sans-serif'],
       },
       colors: {
-        'title-cream': '#FFE5B4',
+        'title-cream': '#a5d3e6',
         'text-brown': '#88615d',
         'button-brown': '#88615d',
         'button-brown-hover': '#7a5551',
