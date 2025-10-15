@@ -5,27 +5,26 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
       style={{ backgroundImage: "url('/hero/background.webp')" }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-      <div className="relative z-10 container mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-row items-center gap-4 sm:gap-8">
           
-          <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+          <div className="w-1/2 text-left">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2 sm:mb-4">
               What are you looking for in Moonveil?
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8">
+            <p className="text-xs sm:text-lg md:text-xl text-gray-200 mb-4 sm:mb-8">
               Explore endless possibilities and begin your adventure with us.
             </p>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 sm:py-3 sm:px-8 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg">
               Get Started
             </button>
           </div>
           
-          <div className="md:w-1/2 flex justify-center">
+          <div className="w-1/2 flex justify-center">
             <img 
               src="/hero/moonveil.webp" 
               alt="Moonveil Character" 
-              className="w-3/4 md:w-full max-w-sm md:max-w-md h-auto"
+              className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md"
             />
           </div>
 
