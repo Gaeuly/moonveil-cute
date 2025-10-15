@@ -2,20 +2,20 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1A1A2E] text-white relative overflow-hidden pt-20 pb-10">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+    <footer className="bg-[#1A1A2E] text-white relative overflow-hidden py-20 md:py-28">
+      <div className="container mx-auto px-6 h-full">
+        <div className="flex flex-col justify-between h-full">
           
-          <div className="md:w-1/2 text-left mb-10 md:mb-0">
-            <img src="/logo.webp" alt="Moonveil Logo" className="w-48 mb-6" />
+          <div className="relative z-10 w-full md:w-1/2 lg:w-2/5 text-left">
+            <img src="/logo.webp" alt="Moonveil Logo" className="w-56 mb-8" />
             <p 
-              className="max-w-md text-gray-400 mb-6"
+              className="text-base text-gray-300 mb-8"
               style={{ fontFamily: "'Ubuntu', sans-serif" }}
             >
               Moonveil is a universe dedicated to creators, adventurers, and dreamers. Our mission is to provide a unique, relevant, and descriptive alternative to existing digital extensions.
             </p>
             <p 
-              className="text-sm text-gray-500"
+              className="text-base text-gray-500"
               style={{ fontFamily: "'Ubuntu', sans-serif" }}
             >
               © 2025 Moonveil. All Rights Reserved.
@@ -25,13 +25,14 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="absolute right-0 top-0 h-full w-1/2 md:w-2/3 lg:w-1/2 flex items-end justify-end opacity-50 md:opacity-100">
+      <div className="absolute inset-y-0 right-0 w-full md:w-3/4 lg:w-3/5 pointer-events-none">
         <img 
           src="/footer.webp" 
           alt="Footer Character" 
-          className="object-contain object-right-bottom h-full max-w-none"
+          className="absolute bottom-0 right-0 w-auto h-[100%] md:h-[130%] max-w-none object-contain object-right-bottom"
         />
       </div>
+
     </footer>
   );
 };
