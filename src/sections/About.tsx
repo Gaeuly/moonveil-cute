@@ -17,17 +17,18 @@ const About = () => {
       <style>{gradientStyle}</style>
       <section 
         id="about" 
-        className="py-20 animated-gradient-about"
+        className="py-20 animated-gradient-about overflow-hidden" // Tambah overflow-hidden untuk kerapian
       >
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap items-center -mx-4">
+        {/* Kontainer dibuat full-width dengan padding yang konsisten */}
+        <div className="w-full px-[6%] md:px-12">
+          <div className="flex flex-wrap items-center">
             
-            {/* Kolom Teks */}
-            <div className="w-full md:w-1/2 px-4 text-left">
+            {/* Kolom Teks - Sekarang selalu full-width */}
+            <div className="w-full text-left">
               <img 
                 src="/about/about.webp" 
                 alt="About Moonveil Logo" 
-                className="w-full max-w-[280px] sm:max-w-xs mb-6"
+                className="w-full max-w-sm sm:max-w-md mb-8" // Ukuran digedein
               />
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white font-kg-corner">
                 About Moonveil
@@ -37,7 +38,7 @@ const About = () => {
                 Moonveil is a digital universe, a unique and memorable identity for creators, dreamers, and adventurers.
               </p>
               
-              <p className="text-base sm:text-lg mb-6 text-white/90 font-ubuntu">
+              <p className="text-base sm:text-lg mb-6 text-white/90 font-ubuntu max-w-4xl">
                 The name "Moonveil" evokes a sense of mystery, magic, and boundless potential. It's the perfect home for anime clubs, developers, cosplayers, artists, and anyone with a passion to create and share.
               </p>
 
@@ -45,17 +46,17 @@ const About = () => {
                 Our Vision
               </h3>
 
-              <p className="text-base sm:text-lg text-white/90 font-ubuntu">
+              <p className="text-base sm:text-lg text-white/90 font-ubuntu max-w-4xl">
                 Our vision is to provide a space where creativity thrives. Anyone can use Moonveil to express themselves online, build communities, and launch their next big idea.
               </p>
             </div>
 
-            {/* Kolom Gambar */}
-            <div className="w-full md:w-1/2 px-4 hidden md:flex justify-center items-center">
+            {/* Kolom Gambar - Dipindah ke bawah dan selalu tampil */}
+            <div className="w-full flex justify-center items-center mt-16">
               <img 
                 src="/about/moonchan.webp" 
                 alt="Moonveil Character" 
-                className="w-full max-w-md"
+                className="w-full max-w-lg" // Ukuran bisa disesuaikan lagi
               />
             </div>
 
@@ -67,5 +68,3 @@ const About = () => {
 };
 
 export default About;
-
-
