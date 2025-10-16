@@ -2,13 +2,14 @@ const Footer = () => {
   return (
     <footer 
       id="footer-section" 
-      className="relative bg-[#1A1A2E]"
+      className="relative" // Kelas bg-[#1A1A2E] dihapus dari sini
     >
       <style>
         {`
           #footer-section {
             padding: 50px;
             background: url(/footer.webp) 150% 53% no-repeat;
+            background-color: #1A1A2E; /* Warna background ditambahkan di sini */
             background-size: 72vw auto;
             color: #FFF; /* Default text color */
           }
