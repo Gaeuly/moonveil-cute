@@ -17,18 +17,16 @@ const About = () => {
       <style>{gradientStyle}</style>
       <section 
         id="about" 
-        className="py-20 animated-gradient-about overflow-hidden" // Tambah overflow-hidden untuk kerapian
+        className="py-20 animated-gradient-about overflow-hidden" 
       >
-        {/* Kontainer dibuat full-width dengan padding yang konsisten */}
         <div className="w-full px-[6%] md:px-12">
           <div className="flex flex-wrap items-center">
             
-            {/* Kolom Teks - Sekarang selalu full-width */}
             <div className="w-full text-left">
               <img 
                 src="/about/about.webp" 
                 alt="About Moonveil Logo" 
-                className="w-full max-w-sm sm:max-w-md mb-8" // Ukuran digedein
+                className="w-full max-w-sm sm:max-w-md mb-8"
               />
               <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white font-kg-corner">
                 About Moonveil
@@ -51,12 +49,11 @@ const About = () => {
               </p>
             </div>
 
-            {/* Kolom Gambar - Dipindah ke bawah dan selalu tampil */}
             <div className="w-full flex justify-center items-center mt-16">
               <img 
                 src="/about/moonchan.webp" 
                 alt="Moonveil Character" 
-                className="w-full max-w-lg" // Ukuran bisa disesuaikan lagi
+                className="w-full max-w-lg"
               />
             </div>
 

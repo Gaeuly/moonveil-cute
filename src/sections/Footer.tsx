@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer 
       id="footer-section" 
-      className="relative" // Kelas bg-[#1A1A2E] dihapus dari sini
+      className="relative"i
     >
       <style>
         {`
@@ -74,8 +74,6 @@ const Footer = () => {
           © 2025 Moonveil. All Rights Reserved.
         </p>
       </div>
-
-      {/* Gambar ini hanya akan muncul di mobile */}
       <img 
         src="/footer.webp"
         alt="Footer Character"
