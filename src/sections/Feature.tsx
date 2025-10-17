@@ -1,10 +1,26 @@
 const features = [
-  { name: 'status', imgSrc: '/feature/bat.webp', link: '#' },
-  { name: 'commands', imgSrc: '/feature/rabbit.webp', link: '#' },
+  { name: 'status', imgSrc: '/feature/bat.webp', link: 'https://www.moonveil.cyou/status' },
+  { name: 'commands', imgSrc: '/feature/rabbit.webp', link: 'https://www.moonveil.cyou/commands' },
   { name: 'donate', imgSrc: '/feature/bear.webp', link: '#' },
   { name: 'support', imgSrc: '/feature/fox.webp', link: '#' },
-  { name: 'docs', imgSrc: '/feature/slime.webp', link: '#' },
+  { name: 'docs', imgSrc: '/feature/slime.webp', link: 'https://www.moonveil.cyou/docs' },
 ];
+
+const BrushStroke = () => (
+  <svg 
+    className="absolute inset-0 w-full h-full text-green-300/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" 
+    viewBox="0 0 200 100" 
+    preserveAspectRatio="none"
+  >
+    <path 
+      d="M10 50 Q 50 20, 100 50 T 190 50" 
+      stroke="currentColor" 
+      strokeWidth="40" 
+      strokeLinecap="round" 
+      fill="none"
+    />
+  </svg>
+);
 
 const Feature = () => {
   const gradientStyle = `
@@ -37,13 +53,18 @@ const Feature = () => {
               <a
                 href={feature.link}
                 key={feature.name}
-                className="group transform transition-transform duration-300 hover:-translate-y-2 w-1/3 md:w-1/6 max-w-[150px]"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group w-1/3 md:w-1/6 max-w-[150px] text-center"
               >
-                <img
-                  src={feature.imgSrc}
-                  alt={feature.name}
-                  className="w-full h-auto mx-auto mb-2"
-                />
+                <div className="relative inline-block transform transition-transform duration-300 group-hover:-translate-y-2">
+                  <BrushStroke />
+                  <img
+                    src={feature.imgSrc}
+                    alt={feature.name}
+                    className="relative w-full h-auto mx-auto mb-2"
+                  />
+                </div>
                 <span className="font-ubuntu text-lg font-semibold text-white/90 group-hover:text-white transition-colors duration-300">
                   {feature.name}
                 </span>
