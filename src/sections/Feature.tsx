@@ -32,7 +32,7 @@ const Feature = () => {
             currency system
           </p>
 
-          <div className="flex flex-wrap justify-center items-end gap-x-6 gap-y-8">
+          <div className="flex flex-wrap justify-center items-baseline gap-x-6 gap-y-8">
             {features.map((feature) => (
               <a
                 href={feature.link}
