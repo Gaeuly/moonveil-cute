@@ -32,18 +32,17 @@ const Feature = () => {
             currency system
           </p>
 
-      
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
+          <div className="flex flex-wrap justify-center items-end gap-x-6 gap-y-8">
             {features.map((feature) => (
-              <a 
-                href={feature.link} 
+              <a
+                href={feature.link}
                 key={feature.name}
-                className="group transform transition-transform duration-300 hover:-translate-y-2"
+                className="group transform transition-transform duration-300 hover:-translate-y-2 w-1/3 md:w-1/6 max-w-[150px]"
               >
-                <img 
-                  src={feature.imgSrc} 
-                  alt={feature.name} 
-                  className="w-full max-w-[150px] mx-auto mb-2" 
+                <img
+                  src={feature.imgSrc}
+                  alt={feature.name}
+                  className="w-full h-auto mx-auto mb-2"
                 />
                 <span className="font-ubuntu text-lg font-semibold text-white/90 group-hover:text-white transition-colors duration-300">
                   {feature.name}
@@ -51,7 +50,6 @@ const Feature = () => {
               </a>
             ))}
           </div>
-
         </div>
       </section>
     </>
