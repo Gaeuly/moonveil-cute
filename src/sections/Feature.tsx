@@ -1,54 +1,26 @@
 const features = [
-  { name: 'status', imgSrc: '/feature/bat.webp', link: 'https://www.moonveil.cyou/status', brush: 'green' },
-  { name: 'commands', imgSrc: '/feature/rabbit.webp', link: 'https://www.moonveil.cyou/commands', brush: 'pink' },
-  { name: 'donate', imgSrc: '/feature/bear.webp', link: '#', brush: 'yellow' },
-  { name: 'support', imgSrc: '/feature/fox.webp', link: '#', brush: 'blue' },
-  { name: 'docs', imgSrc: '/feature/slime.webp', link: 'https://www.moonveil.cyou/docs', brush: 'purple' },
+  { name: 'status', imgSrc: '/feature/bat.webp', link: 'https://www.moonveil.cyou/status' },
+  { name: 'commands', imgSrc: '/feature/rabbit.webp', link: 'https://www.moonveil.cyou/commands' },
+  { name: 'donate', imgSrc: '/feature/bear.webp', link: '#' },
+  { name: 'support', imgSrc: '/feature/fox.webp', link: '#' },
+  { name: 'docs', imgSrc: '/feature/slime.webp', link: 'https://www.moonveil.cyou/docs' },
 ];
 
-const BrushStroke = ({ type }) => {
-  const brushes = {
-    green: {
-      path: "M10 50 Q 50 20, 100 50 T 190 50",
-      color: "text-green-300/80",
-    },
-    pink: {
-      path: "M10 40 C 40 10, 80 10, 110 40 S 160 70, 190 40",
-      color: "text-pink-300/80",
-    },
-    yellow: {
-      path: "M20 60 C 50 80, 100 80, 130 60 S 180 40, 200 60",
-      color: "text-yellow-300/80",
-    },
-    blue: {
-        path: "M5 55 C 50 30, 100 30, 150 55 S 200 80, 200 55",
-        color: "text-blue-300/80",
-    },
-    purple: {
-        path: "M15 45 Q 60 70, 105 45 T 195 45",
-        color: "text-purple-300/80",
-    },
-  };
-
-  const selectedBrush = brushes[type] || brushes.green;
-
-  return (
-    <svg 
-      className={`absolute inset-0 w-full h-full ${selectedBrush.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`} 
-      viewBox="0 0 200 100" 
-      preserveAspectRatio="none"
-    >
-      <path 
-        d={selectedBrush.path}
-        stroke="currentColor" 
-        strokeWidth="45" 
-        strokeLinecap="round" 
-        fill="none"
-      />
-    </svg>
-  );
-};
-
+const BrushStroke = () => (
+  <svg 
+    className="absolute inset-0 w-full h-full text-green-300/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" 
+    viewBox="0 0 200 100" 
+    preserveAspectRatio="none"
+  >
+    <path 
+      d="M10 50 Q 50 20, 100 50 T 190 50" 
+      stroke="currentColor" 
+      strokeWidth="40" 
+      strokeLinecap="round" 
+      fill="none"
+    />
+  </svg>
+);
 
 const Feature = () => {
   const gradientStyle = `
@@ -83,14 +55,14 @@ const Feature = () => {
                 key={feature.name}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group w-1/3 md:w-auto md:flex-1 md:max-w-[150px] text-center"
+                className="group w-1/3 md:w-1/6 max-w-[150px] text-center"
               >
                 <div className="relative inline-block transform transition-transform duration-300 group-hover:-translate-y-2">
-                  <BrushStroke type={feature.brush} />
+                  <BrushStroke />
                   <img
                     src={feature.imgSrc}
                     alt={feature.name}
-                    className="relative w-full h-auto mx-auto mb-2 max-w-[100px] md:max-w-full"
+                    className="relative w-full h-auto mx-auto mb-2"
                   />
                 </div>
                 <span className="font-ubuntu text-lg font-semibold text-white/90 group-hover:text-white transition-colors duration-300">
