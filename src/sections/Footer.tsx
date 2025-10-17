@@ -71,7 +71,7 @@ const Footer = () => {
           Our platform operates under the highest standards, ensuring a safe and vibrant space for our global community to connect and create.
         </p>
         <p className="text-sm text-gray-500 font-ubuntu">
-          © 2025 Moonveil. All Rights Reserved.
+          © 2018 Moonveil. All Rights Reserved.
         </p>
       </div>
       <img 
