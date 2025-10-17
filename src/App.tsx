@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Hero from './sections/Hero';
 import About from './sections/About';
+import Feature from './sections/Feature';
 import Faq from './sections/Faq';
 import Footer from './sections/Footer';
 import Navbar from './sections/Navbar';
@@ -12,6 +13,7 @@ function MainPage() {
       <Navbar />
       <Hero />
       <About />
+      <Feature />
       <Faq />
       <Footer />
     </>
