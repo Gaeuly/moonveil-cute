@@ -76,21 +76,21 @@ const Feature = () => {
             currency system
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-10 justify-items-center">
+          <div className="flex flex-wrap justify-center items-baseline gap-x-6 gap-y-8">
             {features.map((feature) => (
               <a
                 href={feature.link}
                 key={feature.name}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group w-full max-w-[150px] text-center"
+                className="group w-1/3 md:w-auto md:flex-1 md:max-w-[150px] text-center"
               >
                 <div className="relative inline-block transform transition-transform duration-300 group-hover:-translate-y-2">
                   <BrushStroke type={feature.brush} />
                   <img
                     src={feature.imgSrc}
                     alt={feature.name}
-                    className="relative w-full h-auto mx-auto mb-2"
+                    className="relative w-full h-auto mx-auto mb-2 max-w-[100px] md:max-w-full"
                   />
                 </div>
                 <span className="font-ubuntu text-lg font-semibold text-white/90 group-hover:text-white transition-colors duration-300">
@@ -100,7 +100,7 @@ const Feature = () => {
             ))}
           </div>
         </div>
-      section>
+      </section>
     </>
   );
 };
