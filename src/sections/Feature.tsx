@@ -41,7 +41,7 @@ const BrushStroke = ({ type }) => {
       <path 
         d={selectedBrush.path}
         stroke="currentColor" 
-        strokeWidth="35" 
+        strokeWidth="45" 
         strokeLinecap="round" 
         fill="none"
       />
@@ -76,14 +76,14 @@ const Feature = () => {
             currency system
           </p>
 
-          <div className="flex flex-wrap justify-center items-baseline gap-x-6 gap-y-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-10 justify-items-center">
             {features.map((feature) => (
               <a
                 href={feature.link}
                 key={feature.name}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group w-1/3 md:w-1/6 max-w-[150px] text-center"
+                className="group w-full max-w-[150px] text-center"
               >
                 <div className="relative inline-block transform transition-transform duration-300 group-hover:-translate-y-2">
                   <BrushStroke type={feature.brush} />
@@ -100,7 +100,7 @@ const Feature = () => {
             ))}
           </div>
         </div>
-      </section>
+      section>
     </>
   );
 };
