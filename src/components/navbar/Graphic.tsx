@@ -11,6 +11,7 @@ const Graphic = ({ className }: Props) => {
         height="20"
         viewBox="0 0 20 20"
         fill="none"
+        className="block" // PENTING: Biar gak ada gap pixel di bawah
       >
         <path
           d="M0 0v20C0 9 9 0 20 0Z"
