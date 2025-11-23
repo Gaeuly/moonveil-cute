@@ -11,24 +11,27 @@ function MainPage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Feature />
-      <Faq />
-      <Footer />
+      <main className="relative w-full overflow-hidden">
+        <Hero />
+        <About />
+        <Feature />
+        <Faq />
+        <Footer />
+      </main>
     </>
   );
 }
 
 function App() {
   return (
-    <main>
+    <>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/invite" element={<Invite />} />
       </Routes>
-    </main>
+    </>
   );
 }
 
 export default App;
+
