@@ -11,9 +11,10 @@ const Graphic = ({ className }: Props) => {
         height="20"
         viewBox="0 0 20 20"
         fill="none"
+        className="overflow-visible"
       >
         <path
-          d="M0 0v20C0 9 9 0 20 0Z"
+          d="M0 0 L0 20 C0 9 9 0 20 0 V-1 H0 Z"
           fill="currentColor"
         />
       </svg>
