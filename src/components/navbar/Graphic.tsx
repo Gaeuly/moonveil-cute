@@ -11,10 +11,16 @@ const Graphic = ({ className }: Props) => {
         height="20"
         viewBox="0 0 20 20"
         fill="none"
-        className="overflow-visible"
+        // Hapus overflow-visible biar gak bleeding pixel-nya
       >
+        {/* Logika Path Referensi (d="M0 0v18C0 8.059...") disesuaikan ke 20px:
+          M0 0  -> Mulai dari pojok kiri atas
+          v20   -> Garis lurus ke bawah (kiri bawah)
+          C0 9 9 0 20 0 -> Kurva cekung mulus ke kanan atas
+          Z     -> Tutup path
+        */}
         <path
-          d="M0 0 L0 20 C0 9 9 0 20 0 V-1 H0 Z"
+          d="M0 0v20C0 9 9 0 20 0Z"
           fill="currentColor"
         />
       </svg>
