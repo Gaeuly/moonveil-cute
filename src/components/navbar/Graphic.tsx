@@ -1,27 +1,19 @@
 interface Props {
   className?: string;
-  rotation?: string; // Buat muter-muter curvanya
 }
 
-/**
- * Ini komponen "Siku Lengkung" (Inverted Radius).
- * Fungsinya buat nambal sudut biar keliatan cair/liquid.
- */
 const Graphic = ({ className }: Props) => {
   return (
     <div className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 18 18"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
         fill="none"
       >
-        {/* Path ini bentuknya segitiga siku yang sisi miringnya cekung.
-           Warnanya ngikutin parent (fill-current / text-white/black).
-        */}
         <path
-          d="M0 0v18C0 8.059 8.059 0 18 0Z"
+          d="M0 0v20C0 9 9 0 20 0Z"
           fill="currentColor"
         />
       </svg>
