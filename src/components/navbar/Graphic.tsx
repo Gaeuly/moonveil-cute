@@ -11,9 +11,9 @@ const Graphic = ({ className }: Props) => {
         height="20"
         viewBox="0 0 20 20"
         fill="none"
-        className="block" // Anti-gap
+        // PENTING: display block biar gak ada celah pixel
+        className="block"
       >
-        {/* Path: Segitiga Solid di Kiri-Atas, Sisi Miring Melengkung */}
         <path
           d="M0 0v20C0 9 9 0 20 0Z"
           fill="currentColor"
@@ -24,5 +24,3 @@ const Graphic = ({ className }: Props) => {
 };
 
 export default Graphic;
-
-

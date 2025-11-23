@@ -3,16 +3,18 @@ import ThemeToggle from "../components/ThemeToggle";
 
 const Navbar = () => {
   return (
-    // FIX UTAMA: Ganti 'top-0' jadi 'top-2' atau 'top-4'.
-    // Ini ngasih 'napas' di atas biar lengkungannya gak nabrak search bar browser.
-    // 'w-[calc(100%-16px)]' dan 'left-2' biar ngambang tengah (opsional, tapi lebih estetik).
-    <header className="fixed top-2 left-0 right-0 mx-auto w-full z-[999] pointer-events-none px-2">
+    // CONTAINER UTAMA (Transparan):
+    // fixed top-4: Jarak dari atas biar 'ngambang' (PENTING biar lengkungan gak kepotong).
+    // px-4: Jarak kiri-kanan biar gak nempel tembok.
+    // pointer-events-none: Biar area bolong di tengah bisa ditembus klik (klik ke section bawahnya).
+    <header className="fixed top-4 left-0 w-full z-[999] px-4 pointer-events-none">
       
-      {/* Container Utama dengan Shadow di Parent */}
-      <div className="flex justify-between w-full drop-shadow-sm filter">
+      {/* Flex container buat misahin Kiri (Logo) dan Kanan (Menu) */}
+      <div className="flex justify-between w-full">
         
-        {/* === KIRI (LOGO) === */}
-        <div className="relative bg-white text-white pointer-events-auto rounded-br-[20px] rounded-tl-[15px] pt-4 pb-3 pl-6 pr-5 overflow-visible">
+        {/* === PULAU KIRI (LOGO) === */}
+        {/* pointer-events-auto: Wajib ada biar tombol di dalemnya bisa diklik */}
+        <div className="relative bg-white text-black pointer-events-auto rounded-[15px] rounded-br-[20px] pt-3 pb-3 pl-5 pr-5 shadow-sm">
           <div className="flex items-center gap-4">
             <a href="#hero" className="block">
               <img 
@@ -26,34 +28,47 @@ const Navbar = () => {
             <ThemeToggle />
           </div>
 
-          {/* Curve Kanan Atas (Nyambung ke sisi kanan logo) */}
-          {/* Posisi: Nempel di kanan, sejajar atas. Pake default Graphic (Solid Kiri-Atas) */}
-          <Graphic className="absolute -right-[19.5px] top-0 text-white" />
+          {/* Curve Kanan Atas (Menjulur ke Kanan) */}
+          <div className="absolute -right-[20px] top-0 text-white">
+            <Graphic />
+          </div>
 
-          {/* Curve Kiri Bawah (Nyambung ke sisi bawah logo) */}
-          {/* Posisi: Nempel di kiri bawah. BUTUH ROTATE 90 Biar solid-nya di Kanan-Atas */}
-          <Graphic className="absolute left-0 -bottom-[19.5px] text-white rotate-90" />
+          {/* Curve Kiri Bawah (Menjulur ke Bawah) */}
+          <div className="absolute left-0 -bottom-[20px] text-white">
+             {/* Puter 90 derajat biar pas sudutan bawah */}
+             <div className="rotate-90">
+                <Graphic />
+             </div>
+          </div>
         </div>
 
-        {/* === KANAN (MENU) === */}
-        <div className="relative bg-white text-black pointer-events-auto rounded-bl-[20px] rounded-tr-[15px] pt-4 pb-3 pl-5 pr-6 cursor-pointer hover:bg-gray-50 transition-colors group overflow-visible">
+
+        {/* === PULAU KANAN (MENU) === */}
+        <div className="relative bg-white text-black pointer-events-auto rounded-[15px] rounded-bl-[20px] pt-3 pb-3 pl-5 pr-5 shadow-sm cursor-pointer hover:bg-gray-50 transition-colors group">
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium tracking-wide">Menu</span>
           </div>
 
-          {/* Curve Kiri Atas (Nyambung ke sisi kiri menu) */}
-          {/* Posisi: Nempel di kiri, sejajar atas. BUTUH ROTATE 90 (Solid Kanan-Atas) */}
-          <Graphic className="absolute -left-[19.5px] top-0 text-white rotate-90" />
+          {/* Curve Kiri Atas (Menjulur ke Kiri) */}
+          <div className="absolute -left-[20px] top-0 text-white">
+            {/* Flip Horizontal */}
+            <div className="scale-x-[-1]">
+              <Graphic />
+            </div>
+          </div>
 
-          {/* Curve Kanan Bawah (Nyambung ke sisi bawah menu) */}
-          {/* Posisi: Nempel kanan bawah. Pake default Graphic (Solid Kiri-Atas) */}
-          <Graphic className="absolute right-0 -bottom-[19.5px] text-white" />
+          {/* Curve Kanan Bawah (Menjulur ke Bawah) */}
+          <div className="absolute right-0 -bottom-[20px] text-white">
+            {/* Flip Horizontal + Puter 90 */}
+            <div className="scale-x-[-1] rotate-90">
+              <Graphic />
+            </div>
+          </div>
         </div>
+
       </div>
     </header>
   );
 };
 
 export default Navbar;
-
-
